@@ -1,0 +1,71 @@
+<div class="container py-3">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <a routerLink="/jobs" class="link-primary"><i class="bi bi-arrow-left fw-bold"></i> Back</a>
+                    </div>
+                    <form [formGroup]="creatJobForm" (ngSubmit)="submit()">
+                        <div class="mb-3 position-relative">
+                          <label for="job_number" class="form-label">Job number</label>
+                          <input type="text" placeholder="Job number" class="form-control" id="job_number"  
+                          formControlName="job_number" [ngClass]="{ 'is-invalid': submitted && f.job_number.errors }">
+                          <div *ngIf="submitted && f.job_number.errors" class="invalid-feedback">
+                            <div *ngIf="f.job_number.errors.required">Job number is required</div>
+                          </div>                      
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="job_title" class="form-label">Job title</label>
+                            <input type="text" placeholder="Job title" class="form-control" id="job_title" 
+                            formControlName="job_title" [ngClass]="{ 'is-invalid': submitted && f.job_title.errors }">
+                            <div *ngIf="submitted && f.job_title.errors" class="invalid-feedback">
+                                <div *ngIf="f.job_title.errors.required">Job title is required</div>
+                            </div> 
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="job_statr" class="form-label">Start date</label>
+                            <input type="date" placeholder="Start date" class="form-control" id="job_statr" 
+                            formControlName="job_start_date" [ngClass]="{ 'is-invalid': submitted && f.job_start_date.errors }">
+                            <div *ngIf="submitted && f.job_start_date.errors" class="invalid-feedback">
+                                <div *ngIf="f.job_start_date.errors.required">Start date is required</div>
+                            </div> 
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="job_close" class="form-label">Close date</label>
+                            <input type="date" placeholder="Close date" class="form-control" id="job_close" 
+                            formControlName="job_close_date" [ngClass]="{ 'is-invalid': submitted && f.job_close_date.errors }">
+                            <div *ngIf="submitted && f.job_close_date.errors" class="invalid-feedback">
+                                <div *ngIf="f.job_close_date.errors.required">Close date is required</div>
+                            </div> 
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="job_opening" class="form-label">Number of opening</label>
+                            <input type="number" placeholder="Number of opening" class="form-control" id="job_opening" 
+                            formControlName="number_of_openings" [ngClass]="{ 'is-invalid': submitted && f.number_of_openings.errors }">
+                            <div *ngIf="submitted && f.number_of_openings.errors" class="invalid-feedback">
+                                <div *ngIf="f.number_of_openings.errors.required">Opening number is required</div>
+                            </div> 
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="job_notes" class="form-label">Job notes</label>
+                            <input type="text" placeholder="Job notes" class="form-control" id="job_notes" 
+                            formControlName="job_notes" [ngClass]="{ 'is-invalid': submitted && f.job_notes.errors }">
+                            <div *ngIf="submitted && f.job_notes.errors" class="invalid-feedback">
+                                <div *ngIf="f.job_notes.errors.required">Notes is required</div>
+                            </div> 
+                        </div>
+                        <div class="mb-3 position-relative form-check">
+                          <input type="checkbox" formControlName="experience_required" id="experience_required" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.experience_required.errors }" />
+                          <label for="experience_required" class="form-check-label">Experiences</label>
+                          <div *ngIf="submitted && f.experience_required.errors" class="invalid-feedback">Experience is required</div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
