@@ -1,0 +1,45 @@
+<div class="container pt-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="d-flex align-items-center pt-2 pb-3">
+                        <a routerLink="/jobs" class="link-primary"><i class="bi bi-arrow-left fw-bold"></i> Back</a> <h1 class="mb-0 fs-3 ms-3">Jobs Details</h1>
+                    </div>
+                    <table class="table table-hover border-top">
+                        <tbody>
+                          <tr>
+                            <td class="fw-bold">Job number</td>
+                            <td >{{dataDetails.job_number |  titlecase}}</td>
+                          </tr>
+                          <tr>
+                            <td class="fw-bold">Job title</td>
+                            <td>{{dataDetails.job_title |  titlecase}}</td>
+                          </tr>
+                          <tr>
+                            <td class="fw-bold">Start date</td>
+                            <td>{{dataDetails.job_start_date |  titlecase}}</td>
+                          </tr>
+                          <tr>
+                            <td class="fw-bold">Close date</td>
+                            <td>{{dataDetails.job_close_date |  titlecase}}</td>
+                          </tr>
+                          <tr>
+                            <td class="fw-bold">Number of opening</td>
+                            <td>{{dataDetails.number_of_openings}}</td>
+                          </tr>
+                          <tr>
+                            <td class="fw-bold">Job notes</td>
+                            <td>{{dataDetails.job_notes |  titlecase}}</td>
+                          </tr>
+                          <tr>
+                            <td class="fw-bold">Experiences</td>
+                            <td> {{dataDetails.experience_required}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
